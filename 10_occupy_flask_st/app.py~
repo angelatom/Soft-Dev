@@ -5,7 +5,7 @@
 
 import csv,random
 from flask import Flask, render_template
-import util.occupation as occupation
+import util.ants as ants
 app = Flask(__name__) #Create instance of class Flask
 
 @app.route("/") #Assign fxn to route
@@ -17,7 +17,7 @@ def hello_world():
 	
 @app.route('/occupations')
 def occupations():	
-    lst = occupation.createTable()
+	lst = occupation.createTable()
     ans = occupation.selectRandOccupation() # variable ans is a random occupation          
     return render_template('occupations.html', input = lst,r = ans) # render template
 
