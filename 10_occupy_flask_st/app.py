@@ -1,4 +1,4 @@
-#Kevin Lin, Angela Tom
+#Team Penguins -- Kevin Lin, Angela Tom
 #SoftDev Pd6
 #K10 -- Jinja Tuning
 #2018-09-24
@@ -29,39 +29,17 @@ def selectRandOccupation():
 	
 @app.route('/occupations')
 def occupations():	
-    lst = []
+    lst = [] 
     with open('data/occupations.csv') as infile:
         reader = csv.DictReader(infile)
         for row in reader:
              lst.append([row['Job Class'], row['Percentage']])
-    ans = selectRandOccupation()         
-    return render_template('occupations.html', input = lst,r = ans)
+    ans = selectRandOccupation() # variable ans is a random occupation          
+    return render_template('occupations.html', input = lst,r = ans) # render template
 
 
 if __name__ == "__main__":
     app.debug = True
     app.run()
-'''
-lst = []
 
-@app.route("/occupations")
-def occupations():
-    
-
-    with open('data/occupations.csv') as infile:
-        reader = csv.DictReader(infile)
-        for row in reader:
-             lst.append([row['Job Class'], row['Percentage']])
-			 
-
-    return render_template('occupations.html', input = lst)
-
-
-	
-@app.route("/") #Assign fxn to route
-def hello_world():
-    print("about to print __name__...")
-    print(__name__) #Where will this go?
-    return "No hablo queso!"
-'''
 
