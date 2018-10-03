@@ -1,0 +1,27 @@
+body {
+    font-family: sans-serif;
+	margin: auto;
+	text-align: center;
+}
+p.collapse {
+    margin-bottom: 0px;
+    margin-top: 1px;
+}
+
+p.error {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    color: red;
+}
+h1, h2, p {
+    text-align: center;
+}
+
+input[type=submit] {
+    width: 10%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: #d3dae5;
+    border: none;
+    cursor: pointer;
+}

@@ -1,0 +1,21 @@
+<!--
+I Like Cookies: Xiaojie(Aaron) Li, Angela Tom
+SoftDev1 pd6
+K15 -- Oh Yes Perhaps I Do...
+2018-10-02
+-->
+
+{% extends "base.html" %}
+	{% block title %}
+    Hello There!
+	{% endblock %}
+
+	{% block content %}
+    <!-- greeting -->
+    <h1>Greetings <i>{{ username }}</i>, You are Logged In!</h1>
+
+    <!-- logout form -->
+    <form action="/drop">
+        <p><input type="submit" value="Logout"></p>
+    </form>
+	{% endblock %}

@@ -1,0 +1,29 @@
+<!--
+I Like Cookies: Xiaojie(Aaron) Li, Angela Tom
+SoftDev1 pd6
+K15 -- Oh Yes Perhaps I Do...
+2018-10-02
+-->
+
+{% extends "base.html" %}
+	{% block title %}
+	Login 
+	{% endblock %}
+
+	{% block content %}
+    <h1>Welcome, Please Log In!</h1>
+    <br>
+
+    <!-- error message -->
+    {% set msgs = get_flashed_messages() %}
+    {% for each in msgs %}
+    <p class="error"> {{ each }} </p>
+    {% endfor %}
+
+    <!-- form -->
+    <form action="/" method="POST">
+        <p class="collapse"><input type="text" name="username" placeholder="Username" required></p>
+        <p class="collapse"><input type="password" name="password" placeholder="Password" required></p><br>
+        <p><input type="submit" value="Log In"></p>
+    </form>
+	{% endblock %}

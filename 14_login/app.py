@@ -24,7 +24,7 @@ def home():
 @app.route("/login", methods = ["POST", "GET"]) # things to do when user presses submit on login page
 def login():
     if request.form["user"] != username or request.form["pass"] != passwd: 
-        return render_template("login.html", error = "Incorrect username or password") # username/password are incorrect
+        return render_template("login.html") # username/password are incorrect
     else:
         session["user"] = username # add user to session
         return redirect(url_for("home")) 
