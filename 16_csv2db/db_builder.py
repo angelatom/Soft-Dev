@@ -14,23 +14,24 @@ c = db.cursor()               #facilitate db ops
 
 #==========================================================
 #INSERT YOUR POPULATE CODE IN THIS ZONE
-peepsL = []
-with open('data./peeps.csv') as infile:
-    peepsR = csv.DictReader(infile)
-    for row in peepsR:
-        peepsL.append([row['name'], row['age'], row['id']])
-coursesL = []
-with open('data/courses.csv') as infile:
-    coursesR = csv.DictReader(infile)
-    for row in coursesR:
-        coursesL.append([row['code'], row['mark'], row['id']])
+def populate():
+    peepsL = []
+    with open('data./peeps.csv') as infile:
+        peepsR = csv.DictReader(infile)
+        for row in peepsR:
+            peepsL.append([row['name'], row['age'], row['id']])
+    coursesL = []
+    with open('data/courses.csv') as infile:
+        coursesR = csv.DictReader(infile)
+        for row in coursesR:
+            coursesL.append([row['code'], row['mark'], row['id']])
 
-print(peepsL)
-print(coursesL)
+    print(peepsL)
+    print(coursesL)
 
-for x in peepsL:
-    for x in range:
-
+    for x in peepsL:
+        for y in range(3):
+            c.execute("INSERT ")
 
 command = "CREATE TABLE peeps (name TEXT, age INTEGER, id INTEGER);"          #build SQL stmt, save as string
 c.execute(command)    #run SQL statement
