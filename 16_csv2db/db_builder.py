@@ -1,4 +1,4 @@
-#Random Team Name -- Angela Tom, Kyle Tau
+#Team Go -- Angela Tom, Kyle Tau
 #SoftDev1 pd6
 #K16 -- No Trouble
 #2018-10-05
@@ -14,28 +14,24 @@ c = db.cursor()               #facilitate db ops
 
 #==========================================================
 #INSERT YOUR POPULATE CODE IN THIS ZONE
+
+command = "CREATE TABLE peeps (name TEXT, age INTEGER, id INTEGER)"          #init table for peeps
+c.execute(command)    #run SQL statement
+command = "CREATE TABLE courses (code TEXT, mark INTEGER, id INTEGER)"       #init table for courses
+c.execute(command)
+
 def populate():
-    peepsL = []
-    with open('data./peeps.csv') as infile:
+    with open('data/peeps.csv') as infile: #populate peeps
         peepsR = csv.DictReader(infile)
         for row in peepsR:
-            peepsL.append([row['name'], row['age'], row['id']])
-    coursesL = []
-    with open('data/courses.csv') as infile:
+            c.execute("INSERT INTO peeps VALUES ('" +row['name']+ "'," +row['age']+ "," +row['id']+ ")") #add for every row
+
+    with open('data/courses.csv') as infile: #populate courses
         coursesR = csv.DictReader(infile)
         for row in coursesR:
-            coursesL.append([row['code'], row['mark'], row['id']])
+            c.execute("INSERT INTO peeps VALUES ('" +row['code']+ "'," +row['mark']+ "," +row['id']+ ")") #add for every row
 
-    print(peepsL)
-    print(coursesL)
-
-    for x in peepsL:
-        for y in range(3):
-            c.execute("INSERT ")
-
-command = "CREATE TABLE peeps (name TEXT, age INTEGER, id INTEGER);"          #build SQL stmt, save as string
-c.execute(command)    #run SQL statement
-
+populate()
 #==========================================================
 
 db.commit() #save changes
