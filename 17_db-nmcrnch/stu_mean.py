@@ -11,6 +11,7 @@ import csv
 
 DB_FILE="database.db"
 db = sqlite3.connect(DB_FILE)
+db.text_factory = str
 c = db.cursor()                           #allows sqlite to be used on database.db
 
 
@@ -60,7 +61,7 @@ def average():
         names[name] = [float("{0:.2f}".format(sum(names[name]) / (float(len(names[name]))))),id]
     print(names)
     return names
-
+    
 def createIDTable():
     avgD = average() # dictionary of the averages
     c.execute("CREATE TABLE peeps_avg (id INTEGER, average FLOAT)") # create the peeps_avg table
@@ -82,5 +83,10 @@ makeTable("courses.csv")
 makeTable("peeps.csv")
 print(average())
 createIDTable()
+addRows("S", 10, 0)
 db.commit()       #save changes
 db.close()        #close database
+
+
+
+
