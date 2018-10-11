@@ -46,6 +46,7 @@ def average():
     #creates a list of ids
     command = 'Select id from peeps'
     cur = c.execute(command)
+
     #creates a dictionary where the keys are the student names and value is a empty list
     names = dict()
     for each in tabl:
