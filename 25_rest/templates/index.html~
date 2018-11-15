@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>24_rest</title>
+  </head>
+  <body>
+    New adventures in RESTful APIs: 
+    <br>
+    <img src={{image}}>
+ 
+  </body>
+</html>
